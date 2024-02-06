@@ -8,7 +8,7 @@
     # Potato will write the annotation file for all annotations to this
     # directory, as well as per-annotator output files and state information
     # necessary to restart annotation.
-    "output_annotation_dir": "annotation_output/full/",
+    "output_annotation_dir": "./annotation_output",
 
     # The output format for the all-annotator data. Allowed formats are:
     # * jsonl
@@ -23,7 +23,10 @@
     "annotation_codebook_url": "",
 
     "data_files": [
-       "data/toy_worm.tsv"
+      "data/real_data_snippets.json"
+      # "data/toy_data.json"
+      #  "data/toy_worm_2.tsv"
+        # , ...
     ],
 
     "item_properties": {
@@ -32,9 +35,12 @@
     },
 
   #list_as_text is used when the input text is actually a list of texts, usually used for best-worst-scaling
+    # "list_as_text": {
+    #   "text_list_prefix_type": 'None',
+    #   "horizontal": True,
+    # },
     "list_as_text": {
-      "text_list_prefix_type": 'None',
-      "horizontal": True,
+      "text_list_prefix_type": 'alphabet'
     },
 
     "user_config": {
@@ -61,7 +67,7 @@
       "on": True,
       #"order" : ['pre_annotation', 'prestudy_passed', 'prestudy_failed', 'post_annotation'],
       "order" : ['pre_annotation', 'post_annotation'],
-      "pre_annotation": ['surveyflow/Welcome.jsonl', 'surveyflow/Task.jsonl', 'surveyflow/Lynn_consent.jsonl'],
+      "pre_annotation": ['surveyflow/Welcome.jsonl', 'surveyflow/Task.jsonl', 'surveyflow/Consent.jsonl'],
       "prestudy_passed": ['surveyflow/prestudy_pass.jsonl'],
       "prestudy_failed": ['surveyflow/prestudy_fail.jsonl'],
       "post_annotation": ['surveyflow/experience.jsonl', 'surveyflow/demographic_questions.jsonl','surveyflow/end.jsonl'],
@@ -84,10 +90,10 @@
     "automatic_assignment": {
       #whether do automatic task assignment for annotators, default False.
       "on": True,
-      "output_filename": 'task_assignment.json',
+      "output_filename": './task_assignment.json',
       "sampling_strategy": 'random',
       "labels_per_instance": 10,
-      "instance_per_annotator": 50,
+      "instance_per_annotator": 3,
       "test_question_per_annotator": 0, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
@@ -97,33 +103,37 @@
     # How many seconds do you want the annotators spend on each instance, after
     # that, an alert will be sent per alert_time_each_instance seconds.
     "alert_time_each_instance": 10000000,
-    "horizontal_key_bindings": true,
+    # "horizontal_key_bindings": true,
 
-    "annotation_schemes": [
+"annotation_schemes": [
       {
-        "annotation_type": "likert",
+          "annotation_type": "radio",
+          "name": "bws_best",
+          "description": "Which of these arguments is the most convincing for you?",
 
-        # This name gets used in reporting the annotation results
-        "name": "Consider you read the above comment on Reddit, how offensive do you think it is?",
+          # If true, display the labels horizontally
+          "horizontal": True,
 
-        # This text is shown to the user and can be a longer statement
-        "description": "Consider you read the above comment on Reddit, how offensive do you think it is?",
+          "labels": [
+             "A", "B", "C", "D", "E",
+          ],
+          "sequential_key_binding": True,
+      },
 
-        # The min and max labels are text shown at each end of the scale
-        "min_label": "Not offensive at all",
-        "max_label": "Very offensive",
-        # adding requirements for labels, when "required" is True, the annotators will be asked to finish the current instance to proceed
-        "label_requirement": { "required": True },
-        # How many scale points to show
-        "size": 5,
+      {
+        "annotation_type": "radio",
+        "name": "bws_worst",
+        "description": "Which of these arguments is the least convincing for you?",
 
-        # If true, keys [1-size] will be bound to scale responses. Likert
-        # scales larger than 10 are not supported with this simple
-        # keybinding and will need to use the full item specification to
-        # bind all scale points to keys.
+        # If true, display the labels horizontally
+        "horizontal": True,
+
+        "labels": [
+          "A", "B", "C", "D", "E",
+        ],
         "sequential_key_binding": True,
       }
-    ],
+  ],
 
     # The html that changes the visualiztation for your task. Change this file
     # to influence the layout and description of your task. This is not a full
