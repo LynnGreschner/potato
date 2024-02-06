@@ -90,7 +90,7 @@
     "automatic_assignment": {
       #whether do automatic task assignment for annotators, default False.
       "on": True,
-      "output_filename": './task_assignment.json',
+      "output_filename": 'task_assignment.json',
       "sampling_strategy": 'random',
       "labels_per_instance": 10,
       "instance_per_annotator": 3,
