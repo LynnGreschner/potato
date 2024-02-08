@@ -35,13 +35,13 @@
     },
 
   #list_as_text is used when the input text is actually a list of texts, usually used for best-worst-scaling
-    # "list_as_text": {
-    #   "text_list_prefix_type": 'None',
-    #   "horizontal": True,
-    # },
     "list_as_text": {
-      "text_list_prefix_type": 'alphabet'
+      "text_list_prefix_type": 'None',
+      "horizontal": True,
     },
+    # "list_as_text": {
+    #   "text_list_prefix_type": 'alphabet'
+    # },
 
     "user_config": {
 
@@ -106,16 +106,19 @@
     # "horizontal_key_bindings": true,
 
 "annotation_schemes": [
+
+      # Convincingness
+
       {
           "annotation_type": "radio",
           "name": "bws_best",
-          "description": "Which of these arguments is the most convincing for you?",
+          "description": "Welches Argument überzeugt sie am meisten?",
 
           # If true, display the labels horizontally
           "horizontal": True,
 
           "labels": [
-             "A", "B", "C", "D", "E",
+             "1", "2", "3", "4",
           ],
           "sequential_key_binding": True,
       },
@@ -123,16 +126,35 @@
       {
         "annotation_type": "radio",
         "name": "bws_worst",
-        "description": "Which of these arguments is the least convincing for you?",
+        "description": "Welches Argument überzeugt sie am wenigsten?",
 
         # If true, display the labels horizontally
         "horizontal": True,
 
         "labels": [
-          "A", "B", "C", "D", "E",
+          "1", "2", "3", "4",
         ],
         "sequential_key_binding": True,
-      }
+      },
+
+      # Glauben Sie, dass die Aussage wahr ist?
+
+      {
+            "annotation_type": "multiselect",
+            "name": "favorite_color",
+            "description": "Glauben Sie, dass die Aussage wahr ist?",
+            "labels": [
+               "Ja", "Nein", "Ich bin mir unsicher",
+            ],
+
+            # If true, numbers [1-len(labels)] will be bound to each
+            # label. Check box annotations with more than 10 are not supported
+            # with this simple keybinding and will need to use the full item
+            # specification to bind all labels to keys.
+            "sequential_key_binding": True,
+        }
+
+
   ],
 
     # The html that changes the visualiztation for your task. Change this file
