@@ -23,7 +23,8 @@
     "annotation_codebook_url": "",
 
     "data_files": [
-      "data/real_data_snippets.json"
+      "data/test_data_scheme.json"
+      # "data/real_data_snippets.json"
       # "data/toy_data.json"
       #  "data/toy_worm_2.tsv"
         # , ...
@@ -70,7 +71,8 @@
       "pre_annotation": ['surveyflow/Welcome.jsonl', 'surveyflow/Task.jsonl', 'surveyflow/Consent.jsonl'],
       "prestudy_passed": ['surveyflow/prestudy_pass.jsonl'],
       "prestudy_failed": ['surveyflow/prestudy_fail.jsonl'],
-      "post_annotation": ['surveyflow/experience.jsonl', 'surveyflow/demographic_questions.jsonl','surveyflow/end.jsonl'],
+      "post_annotation": ['surveyflow/Bewertung.jsonl', 'surveyflow/Ende.jsonl'],
+      # "post_annotation": ['surveyflow/experience.jsonl', 'surveyflow/demographic_questions.jsonl','surveyflow/end.jsonl'],
       # If set, we will automatically generate testing questions similar to the annotation instances, but explicitly ask the annotator to choose one option
       "testing": [],
     },
@@ -111,7 +113,7 @@
 
       {
           "annotation_type": "radio",
-          "name": "bws_best",
+          "name": "convincingness_most",
           "description": "Welches Argument überzeugt sie am meisten?",
 
           # If true, display the labels horizontally
@@ -125,7 +127,7 @@
 
       {
         "annotation_type": "radio",
-        "name": "bws_worst",
+        "name": "convincingness_least",
         "description": "Welches Argument überzeugt sie am wenigsten?",
 
         # If true, display the labels horizontally
@@ -141,7 +143,7 @@
 
       {
             "annotation_type": "multiselect",
-            "name": "favorite_color",
+            "name": "belief_statement",
             "description": "Glauben Sie, dass die Aussage wahr ist?",
             "labels": [
                "Ja", "Nein", "Ich bin mir unsicher",
