@@ -1,0 +1,2 @@
+{"id":"1","text":"Ich habe die Anweisungen gelesen und verstanden.","schema": "radio", "choices": ["Ja", "Nein"], "label_requirement": {"right_label":["Yes"]}}
+{"id":"2","text":"Ich möchte an dieser Untersuchung teilnehmen und mit der Studie fortfahren.","schema": "radio", "choices": ["Ja", "Nein"], "label_requirement": {"right_label":["Yes"]}}

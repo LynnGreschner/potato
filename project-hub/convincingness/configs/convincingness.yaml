@@ -68,7 +68,8 @@
       "on": True,
       #"order" : ['pre_annotation', 'prestudy_passed', 'prestudy_failed', 'post_annotation'],
       "order" : ['pre_annotation', 'post_annotation'],
-      "pre_annotation": ['surveyflow/Welcome.jsonl', 'surveyflow/Task.jsonl', 'surveyflow/Consent.jsonl'],
+      # "pre_annotation": ["surveyflow/Welcome.jsonl"],
+      "pre_annotation": ['surveyflow/&#220;bersicht.jsonl', 'surveyflow/Aufgabe.jsonl', 'surveyflow/Einwilligung.jsonl'],
       "prestudy_passed": ['surveyflow/prestudy_pass.jsonl'],
       "prestudy_failed": ['surveyflow/prestudy_fail.jsonl'],
       "post_annotation": ['surveyflow/Bewertung.jsonl', 'surveyflow/Ende.jsonl'],
@@ -95,7 +96,7 @@
       "output_filename": 'task_assignment.json',
       "sampling_strategy": 'random',
       "labels_per_instance": 10,
-      "instance_per_annotator": 3,
+      "instance_per_annotator": 5,
       "test_question_per_annotator": 0, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
@@ -114,7 +115,7 @@
       {
           "annotation_type": "radio",
           "name": "convincingness_most",
-          "description": "Welches Argument überzeugt sie am meisten?",
+          "description": "Welches Argument überzeugt Sie am meisten?",
 
           # If true, display the labels horizontally
           "horizontal": True,
@@ -128,7 +129,7 @@
       {
         "annotation_type": "radio",
         "name": "convincingness_least",
-        "description": "Welches Argument überzeugt sie am wenigsten?",
+        "description": "Welches Argument überzeugt Sie am wenigsten?",
 
         # If true, display the labels horizontally
         "horizontal": True,
@@ -146,7 +147,7 @@
             "name": "belief_statement",
             "description": "Glauben Sie, dass die Aussage wahr ist?",
             "labels": [
-               "Ja", "Nein", "Ich bin mir unsicher",
+               "Ja", "Nein", "Ich bin mir nicht sicher",
             ],
 
             # If true, numbers [1-len(labels)] will be bound to each
