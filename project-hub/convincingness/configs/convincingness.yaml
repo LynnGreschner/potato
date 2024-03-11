@@ -75,7 +75,7 @@
       "post_annotation": ['surveyflow/Bewertung.jsonl', 'surveyflow/Ende.jsonl'],
       # "post_annotation": ['surveyflow/experience.jsonl', 'surveyflow/demographic_questions.jsonl','surveyflow/end.jsonl'],
       # If set, we will automatically generate testing questions similar to the annotation instances, but explicitly ask the annotator to choose one option
-      "testing": [],
+      "testing": ['surveyflow/testing.jsonl'],
     },
 
     #prestudy test, annotators who fail this test will be disalloed to continue annotation
@@ -97,7 +97,7 @@
       "sampling_strategy": 'random',
       "labels_per_instance": 10,
       "instance_per_annotator": 5,
-      "test_question_per_annotator": 0, # you must set up the test question in surveyflow to use this function
+      "test_question_per_annotator": 1, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
     },
@@ -143,11 +143,13 @@
       # Glauben Sie, dass die Aussage wahr ist?
 
       {
-            "annotation_type": "multiselect",
+            "annotation_type": "radio",
             "name": "belief_statement",
-            "description": "Glauben Sie, dass die Aussage wahr ist?",
+            "description": "Wie schätzen Sie den Wahrheitsgehalt der Aussage ein?",
             "labels": [
-               "Ja", "Nein", "Ich bin mir nicht sicher",
+               "Ich glaube sehr daran, dass es wahr ist.", "Ich glaube, dass es wahr ist.", 
+               "Ich habe absolut keine Ahnung.", "Ich glaube, dass es falsch ist.",
+                "Ich glaube sehr daran, dass es falsch ist."
             ],
 
             # If true, numbers [1-len(labels)] will be bound to each

@@ -1,2 +1,2 @@
-{"id":"1","text":"Ich habe die Anweisungen gelesen und verstanden.","schema": "radio", "choices": ["Ja", "Nein"], "label_requirement": {"required":true}}
-{"id":"2","text":"Ich möchte an dieser Untersuchung teilnehmen und mit der Studie fortfahren.","schema": "radio", "choices": ["Ja", "Nein"], "label_requirement": {"required":true}}
+{"id":"1","text":"Ich habe die Anweisungen gelesen und verstanden.","schema": "radio", "choices": [{"name": "Ja"}, {"name": "Nein", "tooltip": "Klicken Sie auf den Zur&uuml;ck Button und lesen Sie die Anweisungen erneut."}], "label_requirement": {"right_label":["Ja"]}}
+{"id":"2","text":"Ich möchte an dieser Untersuchung teilnehmen und mit der Studie fortfahren.","schema": "radio",  "choices": [{"name": "Ja"}, {"name": "Nein", "tooltip": "Wenn Sie an dieser Studie nicht teilnehmen möchten, können Sie das Fenster jetzt einfach schließen."}], "label_requirement": {"right_label":["Ja"]}}
