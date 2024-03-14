@@ -397,7 +397,8 @@
           var inputs =  document.querySelectorAll('input[validation=right_label]');
           for (var i = 0; i < inputs.length; ++i) {
             if (inputs[i].getAttribute('validation') == 'right_label' && inputs[i].checked == false){
-                alert(inputs[i].name + " must be selected to proceed");
+                // alert(inputs[i].name + " must be selected to proceed");
+                alert("Hoppla! Da ist etwas schief gelaufen. Bitte überprüfen Sie Ihre Eingabe und versuchen Sie es erneut.")
                 //alert(instance_obj.id)
                 return false;
             }
