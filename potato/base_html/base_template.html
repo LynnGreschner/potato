@@ -183,12 +183,37 @@
 
 
     <script>
+        // Create a global variable to save the time when the page was loaded
+        var loadTime = new Date().getTime();
+
       function click_to_next() {
           // Gacky code to simulate the submit button as a keyboard event
           // and not have two separate paths to handle keyboard and mouse
           // events
           var e = $.Event('keyup');
           e.key = "ArrowRight";
+
+            // Check if the main page contains a span element with the class 'working_example'
+            var exampleExists = document.querySelector('span.working_example') !== null;
+
+            // If the span exists
+            if (exampleExists) {
+                // Get the current time
+                var currentTime = new Date().getTime();
+
+                // Calculate the time difference in seconds
+                var timeDifference = (currentTime - loadTime) / 1000;
+
+                // If the time difference is less than 20 seconds
+                if (timeDifference < 20) {
+                    // Show an alert telling the user to spend more time
+                    alert('Bitte lesen Sie sich die Argumente sorgfältig durch. ' + timeDifference + ' Sekunden reichen nicht, um alle Argumente sorgfältig zu lesen und die Überzeugungskraft zu bewerten.');
+
+                    // With this it will not run get_new_instance, because we're just
+                    // jumping out of the function
+                    return;
+                }
+            }
           
           get_new_instance(e);
       }
@@ -552,7 +577,7 @@
         <p>
           <div class="text-center">
             <a class="btn btn-secondary" href="#" role="button" onclick="click_to_prev()">Zur&uuml;ck</a>
-            <a class="btn btn-secondary" href="#" role="button" onclick="click_to_next()">Weiter</a>
+            <a class="btn btn-secondary button_weiter" href="#" role="button" onclick="click_to_next()">Weiter</a>
           </div>
         </p>        
       </div>
@@ -611,6 +636,15 @@
               }
           }
       }      
+      
+
+    </script>
+    <script>
+
+        // Add a click event listener to the button with class 'proceed'
+        document.querySelector('.button_weiter').addEventListener('click', function() {
+
+        });
 
     </script>
   </body>
