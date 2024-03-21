@@ -24,9 +24,6 @@
 
     "data_files": [
       "data/test_data_scheme.json"
-      # "data/real_data_snippets.json"
-      # "data/toy_data.json"
-      #  "data/toy_worm_2.tsv"
         # , ...
     ],
 
@@ -95,7 +92,7 @@
       "on": True,
       "output_filename": 'task_assignment.json',
       "sampling_strategy": 'random',
-      "labels_per_instance": 10,
+      "labels_per_instance": 3,
       "instance_per_annotator": 5,
       "test_question_per_annotator": 1, # you must set up the test question in surveyflow to use this function
 
