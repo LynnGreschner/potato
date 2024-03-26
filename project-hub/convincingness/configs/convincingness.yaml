@@ -23,7 +23,8 @@
     "annotation_codebook_url": "",
 
     "data_files": [
-      "data/test_data_scheme.json"
+      # "data/test_data_scheme.json"
+      'data/pilotstudy1_tuples.json',
         # , ...
     ],
 
