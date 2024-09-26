@@ -1,0 +1,4 @@
+{"id":"0","text":"<big>In this study, you will read a statement and two paragraphs either arguing for or against that statement. <br> Your task is to subjectively decide which paragraph is more convincing to you.</big>","schema": "pure_display", "choices": [""]}
+{"id":"1","text":"Please read the following instruction with examples carefully before moving forward.","schema": "pure_display", "choices": [""]}
+{"id":"2","text":"<big>Instructions with an example:</big>","schema": "pure_display", "choices": ["  <ol>      <li> <b>Read the statement:</b> <br> If you cut through an earthworm, you get two worms. <ul> <li> statement 1 <li> statement 2 <li> statement 3 <li> statement 4 </ul> </ol>"]}
+{"id":"3","text":"","schema": "pure_display", "choices": [""]}

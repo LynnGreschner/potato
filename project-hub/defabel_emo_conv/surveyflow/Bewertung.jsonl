@@ -1,0 +1,2 @@
+{"id":"1","text":"Glauben Sie, dass Sie alle Fragen ernsthaft beantwortet haben, so dass wir sie für Forschungszwecke verwenden können?","schema": "radio", "choices": ["Ja, auf jeden Fall.", "Ich glaube schon.", "Ich glaube eher nicht.", "Nein."], "label_requirement": {"required":true}}
+{"id":"2","text":"Möchten Sie uns noch Feedback zu der Studie geben? (optional)","schema": "text"}
