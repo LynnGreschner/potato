@@ -49,3 +49,8 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+# Ignore everything
+/*
+# But don't ignore your subfolder
+!/defabel_emo_conv
