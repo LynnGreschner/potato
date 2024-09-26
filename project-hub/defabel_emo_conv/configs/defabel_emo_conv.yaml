@@ -94,8 +94,8 @@
       "output_filename": 'task_assignment.json',
       "sampling_strategy": 'ordered',
       "labels_per_instance": 3,
-      "instance_per_annotator": 5,
-      "test_question_per_annotator": 1, # you must set up the test question in surveyflow to use this function
+      "instance_per_annotator": 20,
+      "test_question_per_annotator": 2, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
     },
@@ -112,7 +112,7 @@
 
       {
           "annotation_type": "radio",
-          "name": "convincingness_most",
+          "name": "stance",
           "description": "Stimmen Sie der Aussage zu?",
 
           # If true, display the labels horizontally
@@ -131,7 +131,7 @@
 
       {
         "annotation_type": "radio",
-        "name": "convincingness_least",
+        "name": "topic_familiarity",
         "description": "Wie gut kennen Sie sich mit dem Thema aus?",
 
         # If true, display the labels horizontally
@@ -199,8 +199,7 @@
         "horizontal": False,
 
         "labels": [
-          "Freude", "Wut", "Angst", "Traurigkeit", "Ekel", "Überraschung", "Vorfreude", "Stolz", "Interesse", "Scham", 
-          "Schuld",
+          "Freude", "Wut", "Angst", "Traurigkeit", "Ekel", "Überraschung", "Stolz", "Interesse", "Scham", "Schuld",
         ],
 
         # If true, the field will have an optional text box the user can
@@ -235,7 +234,7 @@
     "base_html_template": "default",
     "header_file": "default",
 
-    # This is where the actual HTML files will be generated ok ok
+    # This is where the actual HTML files will be generated
     "site_dir": "default"
 
 }
