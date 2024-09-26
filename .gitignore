@@ -52,5 +52,9 @@ docs/_build/
 
 # Ignore everything
 /*
-# But don't ignore your subfolder
-!/project-hub/*/
+# But don't ignore directories leading up to your subfolder
+!/potato/project-hub
+!/potato/project-hub/*/
+
+# And don't ignore your subfolder
+!/potato/project-hub/defabel_emo_conv/
