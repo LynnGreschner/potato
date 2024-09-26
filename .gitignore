@@ -53,4 +53,4 @@ docs/_build/
 # Ignore everything
 /*
 # But don't ignore your subfolder
-!/project-hub/defabel_emo_conv
+!/project-hub/*/
