@@ -2,9 +2,9 @@ import os
 import json
 import pandas as pd
 
-# Define the directory where the JSON files are located
+# directory where the JSON files are located, change for different studies
 # directory = '/home/ba7nq8/potato/project-hub/defabel_emo_conv/anno_output_prelim1'
-directory = '/home/ba7nq8/potato/project-hub/defabel_emo_conv/annotation_output'
+directory = '/home/ba7nq8/potato/project-hub/defabel_emo_conv/anno_output_prelim2'
 
 # Initialize an empty list to store DataFrame
 df_list = []
@@ -68,10 +68,10 @@ if not df.empty:
     }).reset_index()
 
     # Write the DataFrame to a CSV file
-    df.to_csv('output_data.csv', index=False)
+    df.to_csv('prelim2_output_data.csv', index=False)
 
 # Write the IDs of the annotators who passed the attention check to a file
-with open('passed_ids.tsv', 'w') as f:
+with open('prelim2_passed_ids.tsv', 'w') as f:
     for id in passed_ids:
         f.write(id + '\n')
 
