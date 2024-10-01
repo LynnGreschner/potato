@@ -8,7 +8,7 @@
     # Potato will write the annotation file for all annotations to this
     # directory, as well as per-annotator output files and state information
     # necessary to restart annotation.
-    "output_annotation_dir": "./annotation_output",
+    "output_annotation_dir": "./anno_output_main_1",
 
     # The output format for the all-annotator data. Allowed formats are:
     # * jsonl
@@ -23,9 +23,8 @@
     "annotation_codebook_url": "",
 
     "data_files": [
-      # 'data/toy-example_defabel.json',
       # 'data/example_data.json'
-      'data/data_prelim1_utf-8.json'
+      'data/data_main_defabel_1.json'
     ],
 
     "item_properties": {
@@ -94,8 +93,8 @@
       "output_filename": 'task_assignment.json',
       "sampling_strategy": 'ordered',
       "labels_per_instance": 3,
-      "instance_per_annotator": 20,
-      "test_question_per_annotator": 2, # you must set up the test question in surveyflow to use this function
+      "instance_per_annotator": 5,
+      "test_question_per_annotator": 1, # you must set up the test question in surveyflow to use this function
 
       "users": [  ],
     },
